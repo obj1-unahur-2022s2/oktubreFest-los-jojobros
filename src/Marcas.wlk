@@ -1,6 +1,7 @@
 class Cerveza {
 	const property lupulo
 	const property origen
+	const property precioPorLitro
 	
 	method graduacion()
 }
@@ -26,8 +27,10 @@ class Roja inherits Negra {
 class Jarra {
 	const property capacidadJarra
 	const property marca
-	const property carpa
+	var property carpa
 	
 	method contenidoAlcohol() = capacidadJarra * marca.graduacion()
+	
+	method precioDeLaVenta() = capacidadJarra * marca.precioPorLitro() * carpa.recargo().recargo(carpa)
 }
 

@@ -88,6 +88,18 @@ class Persona {
 			return self.listaDelitrosTomados().get(self.listaDelitrosTomados().size() - 2) <= self.listaDelitrosTomados().last() 
 		}
 	}
+	
+	method gastoTotalCerveza() {
+		return jarrasCompradas.sum({
+			c => c.precioDeLaVenta()
+		})
+	}
+	
+	method jarraMasCara() {
+		return jarrasCompradas.max({
+			c => c.precioDeLaVenta()
+		})
+	}
 }
 
 class Belga inherits Persona {
